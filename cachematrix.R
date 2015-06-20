@@ -21,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-##  verify the value m, stored previously with getsolve, exists
+##  cacheSolve verifies the value m, stored previously with getsolve, exists
 ##  and is not NULL
 ##  If it exists in memory, returns a message and the value m
 
