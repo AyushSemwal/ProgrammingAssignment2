@@ -7,32 +7,31 @@
 ## and return it (getsolve)
 
 makeCacheMatrix <- function(x = matrix()) {
-        m <- NULL
-        set <- function(y) {
-                x <<- y
-                m <<- NULL
+        m <-  NULL
+        set <-  function(y) {
+                x <<-  y
+                m <<-  NULL
          }
-        get <- function() x
-        setsolve <- function(solve) m <<- solve
-        getsolve <- function() m
-        list(set = set, get = get,
-             setsolve = setsolve,
-             getsolve = getsolve)
+        get <-  function() x
+        setsolve <-  function(solve) m <<- solve
+        getsolve <-  function() m
+        list(set =  set, get =  get,
+             setsolve =  setsolve,
+             getsolve =  getsolve)
 }
 
 
-##  verify the value m, stored previously with getsolve, exists
-##  and is not NULL
-##  If it exists in memory, returns a message and the value m
+## verify the value m, stored previously with getsolve, exists
+## and is not NULL
+## If it exists in memory, returns a message and the value m
 
-cacheSolve <- function(x, ...) {
-        m <- x$getsolve()
-        if(!is.null(m)) {
+cacheSolve <-  function(x, ...) {
+        m <-  x$getsolve()
+        if(!is.null(m))  {
                 message("getting cached data")
-                return(m)
+                return(m )
         }
-        data <- x$get()
-        m <- solve(data, ...)
-        x$setsolve(m)
-        m
-}
+        data <-  x$get()
+        m <-  solve(data, ...)
+        x$setsolve(m )
+        m }
